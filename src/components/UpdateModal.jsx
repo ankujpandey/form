@@ -41,7 +41,7 @@ function UpdateModal(props) {
 
 	const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
 		useFormik({
-			initialValues: initialValues,
+			initialValues,
 			enableReinitialize: true,
 			validationSchema: updateSchema,
 			onSubmit: async (values, action) => {
@@ -101,12 +101,12 @@ function UpdateModal(props) {
 									onChange={handleChange}
 									onBlur={handleBlur}
 								/>
-								{/* {errors.name && touched.name ? (
+								{errors.name && touched.name ? (
 									<p className="form-error">{errors.name}</p>
-								) : null} */}
+								) : null}
 							</div>
 
-							<div className="mb-3">
+							<div className="mb-2">
 								<label htmlFor="mobile" className="form-label">
 									Mobile No.
 								</label>
@@ -119,12 +119,25 @@ function UpdateModal(props) {
 									onChange={handleChange}
 									onBlur={handleBlur}
 								/>
-								{/* {errors.mobile && touched.mobile ? (
+								{errors.mobile && touched.mobile ? (
 									<p className="form-error">{errors.mobile}</p>
-								) : null} */}
+								) : null}
 							</div>
 
-							<div className="mb-3">
+							<div className="mb-2">
+								<label htmlFor="email" className="form-label">
+									E-mail
+								</label>
+								<input
+									disabled={true}
+									type="email"
+									id="email"
+									className="form-control"
+									value={user?.email}
+								/>
+							</div>
+
+							<div className="mb-2">
 								<label htmlFor="pan" className="form-label">
 									Pan Card No.
 								</label>
@@ -137,9 +150,22 @@ function UpdateModal(props) {
 									onChange={handleChange}
 									onBlur={handleBlur}
 								/>
-								{/* {errors.pan && touched.pan ? (
+								{errors.pan && touched.pan ? (
 									<p className="form-error">{errors.pan}</p>
-								) : null} */}
+								) : null}
+							</div>
+
+							<div className="mb-3">
+								<label htmlFor="aadhaar" className="form-label">
+									Aadhaar
+								</label>
+								<input
+									disabled={true}
+									type="aadhaar"
+									id="aadhaar"
+									className="form-control"
+									value={user?.adhar}
+								/>
 							</div>
 
 							<div className="d-flex justify-content-end">

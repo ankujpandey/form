@@ -9,6 +9,7 @@ function UserDetails(props) {
 	const [user, setUser] = useState();
 	const [itemLen, setItemLen] = useState();
 	const [isLoading, setIsLoading] = useState(false);
+	const [personId, setPersonId] = useState();
 
 	const [page, setPage] = useState(1);
 
@@ -18,8 +19,6 @@ function UserDetails(props) {
 		fetchApi();
 		setIsLoading(false);
 	}, [isLoading]);
-
-	console.log("page count--", pageCount);
 
 	// --------------------------------------------------
 	//  Fetching API data
@@ -36,7 +35,6 @@ function UserDetails(props) {
 				}
 			);
 
-			console.log(res);
 			if (res.status === 200) {
 				setUser(res.data.result);
 				setItemLen(res.data.length[0]);
@@ -123,7 +121,10 @@ function UserDetails(props) {
 					{user?.map((person) => (
 						<tr key={person.id}>
 							<th scope="row">
-								<Link data-bs-toggle="modal" data-bs-target="#imgUpload">
+								<Link
+									data-bs-toggle="modal"
+									data-bs-target="#imgUpload"
+									onClick={() => setPersonId(person.id)}>
 									{person.id}
 								</Link>
 							</th>
@@ -200,7 +201,8 @@ function UserDetails(props) {
 					</li>
 				</ul>
 			</nav> */}
-			<ImgUpload />
+
+			<ImgUpload id={personId} />
 		</div>
 	);
 }
