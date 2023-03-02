@@ -36,6 +36,7 @@ function UserDetails(props) {
 			);
 
 			if (res.status === 200) {
+				console.log(res);
 				setUser(res.data.result);
 				setItemLen(res.data.length[0]);
 			} else {
@@ -52,6 +53,7 @@ function UserDetails(props) {
 
 	const handlePageClick = (event) => {
 		setPage(event.selected + 1);
+		console.log("hit");
 		setIsLoading(true);
 	};
 

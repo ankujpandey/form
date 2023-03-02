@@ -4,20 +4,30 @@ import { Icons } from "../icons/Icons";
 
 function ImgUpload(props) {
 	const { id } = props;
-	const [img, setImg] = useState();
+	const [file, setFile] = useState();
 
 	console.log("id---", id);
+	console.log("image---", file);
 
 	const handleSubmit = async (e) => {
-		console.log("image---", img);
+		console.log("image---", file);
 		try {
-			const res = await axios.post(`http://localhost:4000/uploadImage/${id}`, {
-				img: img?.File,
-			});
+			await axios.post(
+				`http://localhost:4000/uploadImage/${id}`,
+				{
+					user_file: file,
+				},
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				}
+			);
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
 	return (
 		<div className="modal fade" tabIndex={-1} id="imgUpload">
 			<div className="modal-dialog">
@@ -32,10 +42,7 @@ function ImgUpload(props) {
 						/>
 					</div>
 					<div className="modal-body">
-						<form
-							onSubmit={(e) => handleSubmit(e)}
-							action=""
-							enctype="multipart/form-data">
+						<form onSubmit={(e) => handleSubmit(e)} action="#">
 							<div>
 								<label htmlFor="formFileLg" className="form-label">
 									Please upload image of Aadhar
@@ -50,7 +57,9 @@ function ImgUpload(props) {
 											id="img"
 											name="img	"
 											type="file"
-											onChange={(e) => setImg(e.target?.files[0])}
+											onChange={(e) => {
+												setFile(e.target.files[0]);
+											}}
 										/>
 										<h5 className="text-warning mt-3 mb-3">Or Drag It Here</h5>
 									</div>

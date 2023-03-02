@@ -7,7 +7,7 @@ function Header(props) {
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container-fluid">
 				<div>
-					<a className="navbar-brand" href="#">
+					<a className="navbar-brand h1 ms-3" href="#">
 						Form
 					</a>
 				</div>
@@ -29,7 +29,7 @@ function Header(props) {
 									Users List
 								</NavLink>
 							</li>
-							<li className="nav-item">
+							<li className="nav-item me-3">
 								<NavLink className="nav-link" to="/form">
 									Add User
 								</NavLink>
