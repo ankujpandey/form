@@ -1,31 +1,28 @@
 import axios from "axios";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Icons } from "../icons/Icons";
 
 function ImgUpload(props) {
 	const { id } = props;
-	const [file, setFile] = useState();
+	// const [file, setFile] = useState([]);
+	let formData = new FormData();
 
 	console.log("id---", id);
-	console.log("image---", file);
+	// console.log("images---", file);
 
 	const handleSubmit = async (e) => {
-		console.log("image---", file);
+		// formData.append("user_file", file[0]);
+		// formData.append("user_file", file[1]);
 		try {
-			await axios.post(
-				`http://localhost:4000/uploadImage/${id}`,
-				{
-					user_file: file,
+			await axios.post(`http://localhost:4000/uploadImage/${id}`, formData, {
+				headers: {
+					"Content-Type": "multipart/form-data",
 				},
-				{
-					headers: {
-						"Content-Type": "multipart/form-data",
-					},
-				}
-			);
+			});
 		} catch (error) {
 			console.log(error);
 		}
+		window.location = "/";
 	};
 
 	return (
@@ -44,21 +41,44 @@ function ImgUpload(props) {
 					<div className="modal-body">
 						<form onSubmit={(e) => handleSubmit(e)} action="#">
 							<div>
-								<label htmlFor="formFileLg" className="form-label">
-									Please upload image of Aadhar
+								<label htmlFor="img1" className="form-label">
+									Please upload Front image of Aadhar
 								</label>
 								<div
 									className="border border-warning rounded"
-									id="img"
+									id="img1"
 									type="file">
 									<div className="m-4">
 										<input
 											className="form-control border border-warning form-control-sm"
-											id="img"
-											name="img	"
+											id="img1"
+											name="img1"
 											type="file"
 											onChange={(e) => {
-												setFile(e.target.files[0]);
+												formData.append("user_file", e.target.files[0]);
+												// setFile([...file, e.target.files[0]]);
+											}}
+										/>
+										<h5 className="text-warning mt-3 mb-3">Or Drag It Here</h5>
+									</div>
+								</div>
+
+								<label htmlFor="img2" className="form-label mt-3">
+									Please upload Back image of Aadhar
+								</label>
+								<div
+									className="border border-warning rounded"
+									id="img2"
+									type="file">
+									<div className="m-4">
+										<input
+											className="form-control border border-warning form-control-sm"
+											id="img2"
+											name="img2"
+											type="file"
+											onChange={(e) => {
+												formData.append("user_file", e.target.files[0]);
+												// setFile([...file, e.target.files[0]]);
 											}}
 										/>
 										<h5 className="text-warning mt-3 mb-3">Or Drag It Here</h5>
