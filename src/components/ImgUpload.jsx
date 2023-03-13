@@ -42,47 +42,53 @@ function ImgUpload(props) {
 						<form onSubmit={(e) => handleSubmit(e)} action="#">
 							<div>
 								<label htmlFor="img1" className="form-label">
-									Please upload Front image of Aadhar
+									Please upload Front image of Aadhaar
 								</label>
-								<div
-									className="border border-warning rounded"
-									id="img1"
-									type="file">
-									<div className="m-4">
-										<input
-											className="form-control border border-warning form-control-sm"
-											id="img1"
-											name="img1"
-											type="file"
-											onChange={(e) => {
-												formData.append("user_file", e.target.files[0]);
-												// setFile([...file, e.target.files[0]]);
-											}}
-										/>
-										<h5 className="text-warning mt-3 mb-3">Or Drag It Here</h5>
-									</div>
+
+								<div>
+									<input
+										className="form-control border border-warning form-control-sm"
+										id="img1"
+										name="img1"
+										type="file"
+										onChange={(e) => {
+											formData.append("user_file", e.target.files[0]);
+											// setFile([...file, e.target.files[0]]);
+										}}
+									/>
 								</div>
 
 								<label htmlFor="img2" className="form-label mt-3">
-									Please upload Back image of Aadhar
+									Please upload Back image of Aadhaar
 								</label>
-								<div
-									className="border border-warning rounded"
-									id="img2"
-									type="file">
-									<div className="m-4">
-										<input
-											className="form-control border border-warning form-control-sm"
-											id="img2"
-											name="img2"
-											type="file"
-											onChange={(e) => {
-												formData.append("user_file", e.target.files[0]);
-												// setFile([...file, e.target.files[0]]);
-											}}
-										/>
-										<h5 className="text-warning mt-3 mb-3">Or Drag It Here</h5>
-									</div>
+								<div>
+									<input
+										className="form-control border border-warning form-control-sm"
+										id="img2"
+										name="img2"
+										type="file"
+										onChange={(e) => {
+											formData.append("user_file", e.target.files[0]);
+											// setFile([...file, e.target.files[0]]);
+										}}
+									/>
+								</div>
+
+								<label htmlFor="img3" className="form-label mt-3">
+									Please Upload Your Photo
+								</label>
+
+								<div>
+									<input
+										className="form-control border border-warning form-control-sm"
+										id="img3"
+										name="img3"
+										type="file"
+										onChange={(e) => {
+											formData.append("user_file", e.target.files[0]);
+											// setFile([...file, e.target.files[0]]);
+										}}
+									/>
 								</div>
 							</div>
 
