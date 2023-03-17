@@ -17,7 +17,7 @@ export const Icons = {
 	aadhar: <FingerprintIcon />,
 	pan: <BadgeIcon />,
 	back: <ChevronLeftIcon />,
-	person: <PersonIcon style={{ height: "45px", width: "50px" }} />,
+	person: <PersonIcon style={{ height: "100px", width: "100px" }} />,
 	addUser: <PersonAddIcon style={{ marginRight: "4px" }} />,
 	upload: <UploadIcon />,
 };
