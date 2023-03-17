@@ -159,7 +159,7 @@ function Individual(props) {
 									onClick={() => {
 										handlepdfDownload(id);
 									}}>
-									{Icons.update} Download
+									{Icons.download} Download
 								</button>
 
 								<button

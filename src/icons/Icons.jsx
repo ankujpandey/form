@@ -8,6 +8,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import PersonIcon from "@mui/icons-material/Person";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import UploadIcon from "@mui/icons-material/Upload";
+import DownloadIcon from "@mui/icons-material/Download";
 
 export const Icons = {
 	delete: <DeleteIcon />,
@@ -20,4 +21,5 @@ export const Icons = {
 	person: <PersonIcon style={{ height: "100px", width: "100px" }} />,
 	addUser: <PersonAddIcon style={{ marginRight: "4px" }} />,
 	upload: <UploadIcon />,
+	download: <DownloadIcon />,
 };
