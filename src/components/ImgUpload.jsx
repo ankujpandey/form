@@ -14,7 +14,7 @@ function ImgUpload(props) {
 		// formData.append("user_file", file[0]);
 		// formData.append("user_file", file[1]);
 		try {
-			await axios.post(`http://localhost:4000/uploadImage/${id}`, formData, {
+			await axios.post(`http://localhost:5000/uploadImage/${id}`, formData, {
 				headers: {
 					"Content-Type": "multipart/form-data",
 				},

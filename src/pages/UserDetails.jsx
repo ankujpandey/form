@@ -27,7 +27,7 @@ function UserDetails(props) {
 	const fetchApi = async () => {
 		try {
 			const res = await axios.get(
-				`http://localhost:4000/?page=${page}&limit=5`,
+				`http://localhost:5000/?page=${page}&limit=5`,
 				{
 					headers: {
 						"Content-Type": "application/json",
@@ -63,7 +63,7 @@ function UserDetails(props) {
 
 	const handleDeleteApi = async (id) => {
 		try {
-			const res = await axios.delete(`http://localhost:4000/${id}`, {
+			const res = await axios.delete(`http://localhost:5000/${id}`, {
 				headers: {
 					"Content-Type": "application/json",
 				},

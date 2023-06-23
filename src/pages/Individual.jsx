@@ -18,7 +18,7 @@ function Individual(props) {
 
 	const fetchApi = async (id) => {
 		try {
-			const res = await axios.get(`http://localhost:4000/${id}`, {
+			const res = await axios.get(`http://localhost:5000/${id}`, {
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -37,7 +37,7 @@ function Individual(props) {
 	// -----------------------------------------------
 	const fetchImage = async (id) => {
 		try {
-			const res = await axios.get(`http://localhost:4000/image/${id}`, {
+			const res = await axios.get(`http://localhost:5000/image/${id}`, {
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -59,7 +59,7 @@ function Individual(props) {
 
 	const handleDeleteApi = async (id) => {
 		try {
-			const res = await axios.delete(`http://localhost:4000/${id}`, {
+			const res = await axios.delete(`http://localhost:5000/${id}`, {
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -82,7 +82,7 @@ function Individual(props) {
 
 	const handlepdfDownload = async (id) => {
 		try {
-			const res = await axios.get(`http://localhost:4000/createPdf/${id}`, {
+			const res = await axios.get(`http://localhost:5000/createPdf/${id}`, {
 				responseType: "blob",
 			});
 
